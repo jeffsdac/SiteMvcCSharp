@@ -1,0 +1,5 @@
+bin/
+appsettings.Development.json
+apsettings.json
+obj/
+*.sln
