@@ -1,0 +1,48 @@
+﻿@using MeuSiteEmMVC.Enum;
+@model UsuarioModel
+
+@{
+}
+
+<h1>CRIAR USUÁRIO</h1>
+
+<form asp-controller="Usuario" asp-action="Criar" method="post">
+
+  <div class="form-group">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" asp-for="Nome" placeholder="Coloque o seu nome" id="nome" >
+  </div>
+
+    <div class="form-group">
+        <label for="password">Senha</label>
+        <input type="password"  asp-for="Senha" class="form-control" id="password" placeholder="**********">
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" asp-for="Login" id="username" placeholder="Insira seu apelido">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control"  asp-for="Email" id="email" placeholder="Insira seu email">
+    </div>
+
+    <div class="form-group">
+        <label for="Perfil">Perfil</label>
+        <select asp-for="Perfil" class="form-control">
+            <option value="0">Selecione</option>
+            <option value="@PerfilEnum.Padrao">Padrão</option>
+            <option value="@PerfilEnum.Admin">Admin</option>
+        </select>
+    </div>
+
+    
+    <div class="w-100 mb-1 mt-1">
+        <button type="submit" class="btn btn-primary w-100">Adicionar</button>
+    </div>
+    <div class="w-100">
+        <a class="btn btn-secondary btn-block w-100" asp-controller="Usuario" asp-action="Index" role="button">Voltar</a>
+    </div>
+
+</form>
